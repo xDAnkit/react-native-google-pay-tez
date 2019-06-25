@@ -43,3 +43,9 @@ local.properties
 buck-out/
 \.buckd/
 *.keystore
+      
+# iOS
+ios
+
+# windows
+windows
