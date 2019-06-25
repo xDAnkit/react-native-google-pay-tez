@@ -1,0 +1,26 @@
+{
+  "name": "react-native-google-pay-tez",
+  "version": "1.0.1",
+  "description": "Google Pay(Tez) Native package for Merchants to accept payments for customers using react native mobile app",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/xDAnkit/react-native-google-pay-tez"
+  },
+  "author": "xDAnkit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-google-pay-tez",
+    "google-pay",
+    "google-tez",
+    "tez",
+    "Google Pay",
+    "react-native-payment"
+  ],
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  }
+}
