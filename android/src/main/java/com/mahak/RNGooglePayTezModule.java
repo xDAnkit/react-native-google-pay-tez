@@ -38,9 +38,6 @@ public class RNGooglePayTezModule extends ReactContextBaseJavaModule {
         public void onActivityResult(Activity a, int requestCode, int resultCode, Intent data) {
             JSONObject jsonItem = new JSONObject();
 
-            Log.i("In", ""+requestCode);
-            Log.i("In", ""+resultCode);
-
             String transactionStatus = data.getStringExtra("Status");
             String googlePayTezTxnId = data.getStringExtra("txnId");
             String responseCode = data.getStringExtra("responseCode");
