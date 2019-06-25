@@ -1,6 +1,10 @@
 
 # react-native-google-pay-tez - Android Only
 
+[![npm](https://img.shields.io/npm/l/express.svg)]()
+
+[![NPM](https://nodei.co/npm/react-native-google-pay-tez.png?downloads=true)](https://nodei.co/npm/react-native-google-pay-tez/)
+
 ## Getting started
 
 `$ npm install react-native-google-pay-tez --save`
@@ -26,7 +30,7 @@
       implementation project(':react-native-google-pay-tez')
   	```
 
-#### Request Parameters (All in String format)
+#### Request Parameters (All should be in String format only)
 ```
 1. scheme - `Use 'upi' (Don't change this)`
 2. authority - `Use 'pay' (Don't change this)`
@@ -55,31 +59,31 @@
 import RNGooglePayTez from 'react-native-google-pay-tez';
 
 _handleInitGooglePay = (googlePayParams) => {
-const { 
-	scheme,
-	authority,
-	merchantUPI,
-	merchantName,
-	merchantCode,
-	transactionId,
-	transactionNote,
-	transactionAmount,
-	transactionCurrency,
-	merchantURL
-	} = googlePayParams;
+    const {
+        scheme,
+        authority,
+        merchantUPI,
+        merchantName,
+        merchantCode,
+        transactionId,
+        transactionNote,
+        transactionAmount,
+        transactionCurrency,
+        merchantURL
+    } = googlePayParams;
 
-// Dispatch Google Pay (Tez) Call 
-        RNGooglePayTez.GooglePayInit(
-            scheme,
-            authority,
-            merchantUPI,
-            merchantName,
-            merchantCode,
-            transactionId,
-            transactionNote,
-            transactionAmount,
-            transactionCurrency,
-            merchantURL, (response) => { /* Transaction Response */ });
+    // Dispatch Google Pay (Tez) Call 
+    RNGooglePayTez.GooglePayInit(
+        scheme,
+        authority,
+        merchantUPI,
+        merchantName,
+        merchantCode,
+        transactionId,
+        transactionNote,
+        transactionAmount,
+        transactionCurrency,
+        merchantURL, (response) => { /* Transaction Response */ });
 }
 ```
 
