@@ -37,39 +37,29 @@ public class RNGooglePayTezModule extends ReactContextBaseJavaModule {
         @Override
         public void onActivityResult(Activity a, int requestCode, int resultCode, Intent data) {
             JSONObject jsonItem = new JSONObject();
-
             String transactionStatus = data.getStringExtra("Status");
             String googlePayTezTxnId = data.getStringExtra("txnId");
             String responseCode = data.getStringExtra("responseCode");
 
-            if (requestCode == TEZ_REQUEST_CODE && transactionStatus.equals("SUCCESS") && responseCode.equals("0")) {
+            if (requestCode == TEZ_REQUEST_CODE) {
                 try {
                     jsonItem.put("validationError", false);
                     jsonItem.put("hasAppInstalled", true);
-                    jsonItem.put("message", "Transaction Success");
                     jsonItem.put("transactionStatus" , transactionStatus);
                     jsonItem.put("googlePayTezTxnId" , googlePayTezTxnId);
                     jsonItem.put("responseCode" , responseCode);
+
+                    if(transactionStatus.equals("SUCCESS") && responseCode.equals("0")) {
+                        jsonItem.put("message", "Transaction completed");
+                    } else {
+                        jsonItem.put("message", "Transaction failed");
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
                 callBack.invoke(jsonItem.toString());
                 return;
-            }
-
-            try {
-                jsonItem.put("validationError", false);
-                jsonItem.put("hasAppInstalled", true);
-                jsonItem.put("message", "Transaction failed");
-                jsonItem.put("transactionStatus" , transactionStatus);
-                jsonItem.put("googlePayTezTxnId" , googlePayTezTxnId);
-                jsonItem.put("responseCode" , responseCode);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            callBack.invoke(jsonItem.toString());
-            return;
+            }            
         }
     };
 

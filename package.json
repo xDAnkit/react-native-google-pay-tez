@@ -1,6 +1,6 @@
 {
   "name": "react-native-google-pay-tez",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Google Pay(Tez) Native package for Merchants to accept payments for customers using react native mobile app",
   "license": "MIT",
   "repository": {
